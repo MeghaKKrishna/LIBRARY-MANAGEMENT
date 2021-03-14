@@ -1,44 +1,36 @@
+<?php
+ include "header1.php";
+?>
+<!DOCTYPE html>
 <html>
 <head>
-<titile>
-Login
-</title>
+	<link rel="stylesheet" href="style.css"> 
+	<title></title>
 </head>
 <body>
-<?php
-$error=$error_login=$error_username=$error_pasword="";
-if(isset($_POST['login']))
-{
-$username=$_POST['username'];
-$password=$_POST['password'];
-if(empty($username))
-{
-$error_username="Username field is mandatory";
-}
-if(empty($password))
-{
-$error_password="Password field is mandatory";
-}
-}
-?>
-<center>
-<table>
-<tr><center><h2><?php echo $error_login; ?></h2></center></tr>
-<form action="" method="POST">
-<tr>
-<td><label>Username</label></td>
-<td><input type="text" name="username"><span><?php echo $error_username; ?></td>
-</tr>
-<tr>
-<td><label>Password</label></td>
-<td><input type="password" name="password"><span><?php echo $error_password; ?></td>
-</tr>
-<tr>
-<td><label></label></td>
-<td><input type="submit" name="login" value="Login"></td>
-</tr>
-</form>
-</table>
-</center>
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label>Username</label>
+      </div>
+      <div class="col-75">
+        <input type="text" name="username" placeholder="Username">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label >Password</label>
+      </div>
+      <div class="col-75">
+        <input type="password"  name="password" placeholder="Password">
+      </div>
+    </div>
+    
+    <div class="row">
+      <input type="submit" value="LOGIN"><label>Not a registered user?</label><a href="register.php">Register</a>
+    </div>
+  </form>
+</div>
 </body>
 </html>
